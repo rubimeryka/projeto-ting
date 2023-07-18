@@ -2,14 +2,13 @@ import sys
 from ting_file_management.file_management import txt_importer
 
 
-
 def process(path_file, instance):
     for index in range(len(instance)):
         if instance.search(index)["nome_do_arquivo"] == path_file:
             return None
 
     file = txt_importer(path_file)
-    
+
     if file is None:
         return None
 
@@ -23,7 +22,9 @@ def process(path_file, instance):
 
     sys.stdout.write(str(file_data))
 
+
 def remove(instance):
+
     if not instance:
         sys.stdout.write("Não há elementos\n")
         return None
